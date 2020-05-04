@@ -340,7 +340,7 @@ func (miner *Xmrig) createConfig(
 				Pass:      "Klaro GUI Miner",
 				Keepalive: true,
 				Nicehash:  false,
-				Variant:   "klr",
+				Variant:   "rx/klaro",
 			},
 		},
 		API: XmrigAPIConfig{
@@ -379,7 +379,7 @@ func (miner *Xmrig) createGPUConfig(
 				Pass:      "Klaro GUI Miner",
 				Keepalive: true,
 				Nicehash:  false,
-				Variant:   "klr",
+				Variant:   "rx/klaro",
 			},
 		},
 		API: XmrigAPIConfig{
