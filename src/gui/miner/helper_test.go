@@ -3,7 +3,7 @@ package miner_test
 import (
 	"testing"
 
-	"github.com/contribute-torque/gui-miner/src/gui/miner"
+	"github.com/pranavms13/Klaro-GUI-Miner/src/gui/miner"
 )
 
 // TestHumanizeTime tests if conversion from seconds to mintes and hours

@@ -1,20 +1,17 @@
 ![](git-assets/miner-logo.png)
 
-#  Torque GUI Miner
+#  Klaro GUI Miner
 
-The Torque GUI miner is a beautiful, easy to use, interface for mining Torque.
-It is aimed at getting people that have never mined Torque into the crypto
+The Klaro GUI miner is a beautiful, easy to use, interface for mining Klaro.
+It is aimed at getting people that have never mined Klaro into the crypto
 game by making it really simple to get started.
 
-![Screenshot](https://i.imgur.com/ruK7z4Y.png "Screenshot")
+<!-- ![Screenshot](https://i.imgur.com/ruK7z4Y.png "Screenshot") -->
 
 We currently support two very popular miner backends:
 
-1. [xtc-stak](https://github.com/contribute-torque/xtc-stak)
-2. [xtcrig](https://github.com/contribute-torque/xtcrig) (note: [xmrig-nvidia](https://github.com/xmrig/xmrig-nvidia) and [xmrig-amd](https://github.com/xmrig/xmrig-amd) does not support our v5 proof-of-work algorithm yet)
-
-If you'd like to fork this miner for you own coin, please see the __forking__
-section later.
+1. [xmr-stak](https://github.com)
+2. [xmrig](https://github.com)
 
 ## Compiling
 
@@ -42,8 +39,8 @@ go get -u github.com/mitchellh/go-ps
 * Clone and build the app
 
 ```shell
-git clone git@github.com:contribute-torque/gui-miner.git contribute-torque/gui-miner
-cd contribute-torque/gui-miner
+git clone git@github.com:pranavms13/Klaro-GUI-miner.git pranavms13/Klaro-GUI-miner
+cd pranavms13/Klaro-GUI-miner
 make
 ```
 
@@ -51,11 +48,5 @@ NOTE: Ensure you clone the GUI miner into your working $GOPATH
 
 If all goes well the binaries for Windows, macOS and Linux will be available in the `bin` folder.
 
-## Forking
-
-In the spirit of open source we'll be making it really simple to fork and
-brand the miner for your own coin. Some structural changes need to be made to
-simplify the process. Subscribe to issue [#3][i3] to follow the progress on this
-guide.
-
-[i3]: https://github.com/contribute-torque/gui-miner/issues/3
+## Credits
+This project was originally developed by the [Stellite](https://github.com/stellitecoin/GUI-miner) ( now Scala ) team.

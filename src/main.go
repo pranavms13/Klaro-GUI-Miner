@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/contribute-torque/gui-miner/src/gui"
+	"github.com/pranavms13/Klaro-GUI-Miner/src/gui"
 )
 
 // AppName is injected by the Astilectron packager

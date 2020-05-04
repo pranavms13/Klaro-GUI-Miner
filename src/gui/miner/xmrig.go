@@ -337,10 +337,10 @@ func (miner *Xmrig) createConfig(
 			{
 				URL:       poolEndpoint,
 				User:      walletAddress,
-				Pass:      "Torque GUI Miner",
+				Pass:      "Klaro GUI Miner",
 				Keepalive: true,
 				Nicehash:  false,
-				Variant:   "xtc",
+				Variant:   "klr",
 			},
 		},
 		API: XmrigAPIConfig{
@@ -379,7 +379,7 @@ func (miner *Xmrig) createGPUConfig(
 				Pass:      "Klaro GUI Miner",
 				Keepalive: true,
 				Nicehash:  false,
-				Variant:   "xtl",
+				Variant:   "klr",
 			},
 		},
 		API: XmrigAPIConfig{
