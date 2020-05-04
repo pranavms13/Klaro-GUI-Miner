@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/lib/astiloader/astiloader.css">
+    <link rel="stylesheet" href="static/lib/astimodaler/astimodaler.css">
+    <link rel="stylesheet" href="static/lib/astinotifier/astinotifier.css">
+    <link rel="stylesheet" href="static/lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/lib/animate.css">
+    <link rel="stylesheet" href="static/lib/nice-select.css">
+    <link rel="stylesheet" href="static/css/main.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
+    <script>window.$ = window.jQuery = require('./static/lib/jquery.min.js');</script>
+</head>
+<body class="miner">
+  <div class="draggable"></div>
+  <a href="#" title="Miner settings" class="header-button settings"><i class="fa fa-gear"/></i></a>
+  <a href="#" title="Help and what's next" class="header-button help"><i class="fa fa-question-circle-o"/></i></a>
+  <a href="#" title="Minimize" class="header-button minimize"><i class="fa fa-window-minimize"/></i></a>
+  <a href="#" title="Exit miner" class="header-button exit"><i class="fa fa-times"/></i></a>
+  <div class="grid">
+    <div class="sidebar-info">
+      <div class="logo">
+        <img src="static/i/klaro-miner-logo.png"/>
+      </div>
+      <div class="section spec">
+        <table class="stats">
+          <tr>
+            <td class="title">
+              Ticker : 
+            </td>
+            <td>
+              Klaro
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              Supply : 
+            </td>
+            <td>
+              18 Million
+            </td>
+          </tr>            
+        </table>
+      </div>
+      <div class="section network">
+        <h3>Network</h3>
+        <table class="stats">
+          <tr>
+            <td class="title">
+              Hashrate : 
+            </td>
+            <td>
+              <!-- 20 MH/s -->
+              <span id="network_hashrate">Updating</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              Difficulty : 
+            </td>
+            <td>
+              <!-- 1 234 912 392 -->
+              <span id="network_difficulty">Updating</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="title">
+              Height : 
+            </td>
+            <td>
+              <!-- 108 000 -->
+              <span id="network_height">Updating</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="section exchanges">
+        <h3>Exchanges</h3>
+        <table class="stats">
+          <tr>
+            <td class="title">
+              BTCSquare : 
+            </td>
+            <td>
+              <!-- 3.4222 BTC -->
+              <span id="trading_btcsquare_volume">Updating</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="section contact">
+        <h3>Contact</h3>
+        <div class="links">
+          <a target="_blank" href="https://www.klaro.ooo">Official Website</a>
+          <a target="_blank" href="https://blocks.klaro.ooo">Block Explorer</a>
+          <a target="_blank" href="https://bitcointalk.org/index.php?topic=5223800">ANN</a>
+          <a target="_blank" href="">Telegram</a>
+          <a target="_blank" href="https://github.com/klaroooo">GitHub</a>
+          <a target="_blank" href="https://twitter.com/KlaroChain">Twitter</a>
+          <a target="_blank" href="">Coin Market Cap</a>
+        </div>
+      </div>
+    </div>
+    <div class="mining">
+      <div class="miner">
+        <div class="mining-stats">
+          <div class="hashrate">
+            <span id="miner_hashrate">0 H/s</span>
+          </div>
+          <div class="detail">Hashrate</div>
+          <a href="#" class="button stop small" id="start_stop">Stop Mining</a>
+          <div class="xmrstak">
+            <table>
+              <tr>
+                <th>
+                  Mining Time
+                </th>
+                <th>
+                  Difficulty
+                </th>
+                <th>
+                  Total Shares
+                </th>
+                <th>
+                  Bad Shares
+                </th>
+                <th>
+                  Errors
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <span id="miner_uptime">Updating</span>
+                </td>
+                <td>
+                  <span id="miner_difficulty">Updating</span>
+                </td>
+                <td>
+                  <span id="miner_shares">Updating</span>
+                </td>
+                <td>
+                  <span id="miner_shares_bad">Updating</span>
+                </td>
+                <td>
+                  <span id="miner_errors">0</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="payment">
+            <div class="estimate">
+              <div class="detail">you are mining an estimated</div>
+              <div id="miner_payout">0.00 Klaro</div>
+              <div class="detail">per day</div>
+            </div>
+            <div class="address">
+              <pre id="miner_address">
+Updating
+              </pre>
+              <div class="detail">Klaro Wallet Address</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="pool" class="current">
+        <div class="pool">
+          <h3>Updating <a href="#" class="info-block dull">Change</a></h3>
+          <a href="http://pool.klaro.ooo" target="_blank" class="address">Updating</a>
+          <div class="stats">
+            <table>
+              <tr>
+                <th>
+                  Hash Rate
+                </th>
+                <th>
+                  Miners
+                </th>
+                <th>
+                  Last Block Found
+                </th>
+              </tr>
+              <tr>
+                <td id="pool_hashrate">
+                  0 MH/s
+                </td>
+                <td id="pool_miners">
+                  0
+                </td>
+                <td id="pool_last_block">
+                  0 hours ago
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chart" style="position:relative">
+      <canvas id="hashrate_chart" width="400" height="400"></canvas>
+    </div>
+    <div class="footer">
+      made with <i class="fa fa-heart"/></i> across the globe
+    </div>
+  </div>
+  <div id="settings" class="settings dn">
+    <div class="header">
+      <h2>Miner Settings</h2>
+    </div>
+    <div class="section address">
+      <p>
+        Klaro address to mine to
+      </p>
+      <div>
+        <input id="settings_mining_address" type="text" placeholder="Your Torque address"/>
+      </div>
+    </div>
+    <div class="section max-usage">
+      <p>
+        Mining power
+      </p>
+      <div class="cpu-tuning">
+        I'd like to use
+        <div class="select-positioner" id="threads">
+          <select>
+            <option value="1" selected>1</option>
+          </select>
+        </div>
+        of my <span id="max_threads">1</span> CPU thread<span id="max_threads_multiple">s</span>
+        <div class="xmrig-extra dn">
+          at a maximum of
+          <div class="select-positioner" id="max_cpu">
+            <select>
+              <option value="10">10%</option>
+              <option value="20">20%</option>
+              <option value="30">30%</option>
+              <option value="40">40%</option>
+              <option value="50">50%</option>
+              <option value="60">60%</option>
+              <option value="70">70%</option>
+              <option value="80">80%</option>
+              <option value="90">90%</option>
+              <option value="100">100%</option>
+            </select>
+          </div>
+          CPU usage
+        </div>
+         for mining
+      </div>
+      <p class="description tip cpu-tuning">
+        Lower values will ensure your computer stays usable while mining. Join <a href="https://t.me/klaroblockchain">#mining</a> to learn more.
+      </p>
+      <div class="gpu-tuning dn">
+        You are running a GPU only miner. To tune the values open the miner/config.json file. Join <a href="https://t.me/klaroblockchain">#mining</a> to learn more.
+      </div>
+    </div>
+    <div class="section pools">
+      <p>
+        Mining pool
+      </p>
+      <div class="pool-selection" id="pool_list">
+
+      </div>
+    </div>
+    <div class="section action">
+      <a class="button back close-settings" href="#">
+        Cancel
+      </a>
+      <a id="update" class="button ok" href="#">
+        Update
+      </a>
+    </div>
+  </div>
+  <div id="help" class="help dn">
+    <div class="header">
+      <h2>What's next?</h2>
+    </div>
+    <div class="section">
+      <p class="ac">
+        You are mining and earning Klaro coins, what should you do now?
+      </p>
+
+      <div class="next-piece">
+        <h3>Visit your mining pool</h3>
+        <p>
+          Enter your Klaro address to see your payment history, set payment limits and see more stats
+        </p>
+      </div>
+      <div class="next-piece">
+        <h3>Learn about Klaro</h3>
+        <p>
+          And what it brings to the cryptocurrency world by visiting the <a class="link" target="_blank" href="https://www.klaro.ooo">official Klaro website</a>
+        </p>
+      </div>
+      <div class="next-piece">
+        <h3>Come say hi</h3>
+        <p>
+          Join the amazing Klaro community on <a class="link" target="_blank" href="https://t.me/klaroblockchain">Telegram</a>
+        </p>
+      </div>
+      <div class="next-piece">
+        <h3>Buy and sell Klaro</h3>
+        <p>
+          Start trading Torque on one of our listed exchanges
+        </p>
+      </div>
+      <div class="next-piece">
+        <h3>Mine 'till you drop!</h3>
+        <p>
+          Learn more about mining in the <a class="link" target="_blank" href="https://t.me/klaroblockchain">#mining</a>
+          channel on <a class="link" target="_blank" href="https://t.me/klaroblockchain">Telegram</a>
+        </p>
+      </div>
+      <div class="next-piece">
+        <h3>Be a stalker</h3>
+        <p>
+          Follow us on <a class="link" href="https://twitter.com/KlaroChain">Twitter</a>
+        </p>
+      </div>
+      <div class="cb"></div>
+    </div>
+    <div class="header">
+      <h2>Something not quite right?</h2>
+    </div>
+    <div class="section center">
+      <p>
+        The Klaro community is very friendly and always ready to help. Join us in the <a class="link" target="_blank" href="">#mining</a>
+         or <a class="link" target="_blank" href="https://t.me/klaroblockchain">#issues</a> channels on <a class="link" target="_blank" href="https://t.me/klaroblockchain">Telegram</a>
+        and we'll help you out. Some common answers can be found on the miner's download page.
+      </p>
+    </div>
+    <div class="section action">
+      <a class="button back close-help" href="#">
+        Close
+      </a>
+    </div>
+  </div>
+
+  <script src="static/lib/astiloader/astiloader.js"></script>
+  <script src="static/lib/astimodaler/astimodaler.js"></script>
+  <script src="static/lib/astinotifier/astinotifier.js"></script>
+  <script src="static/lib/chart.bundle.min.js"></script>
+  <script src="static/lib/jquery.nice-select.min.js"></script>
+  <script src="static/js/shared.js"></script>
+  <script src="static/js/app.js"></script>
+  <script type="text/javascript">
+    app.init();
+  </script>
+</body>
+</html>
